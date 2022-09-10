@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import schoolLogo from "../Images/soso logo.png"
 import style from '../App.css'
 function Navbar() {
-    const [drpdwn, setdrpdwn] = useState(false)
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light fixed-top px-4 py-0">
@@ -17,15 +16,8 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link to="" className="nav-link text-light me-4" aria-current="page">About</Link>
                             </li>
-                            <li className="nav-item dropdown">
-                                <p className="nav-link text-light me-4 dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" onMouseMoveCapture={()=>setdrpdwn(true)}>
-                                    Admission
-                                </p>
-                                <ul className="dropdown-menu mt-2 dropdownKey" aria-labelledby="navbarDropdown" >
-                                    <li><Link to="/apply-for-admission" className="dropdown-item dropdownList" >Admission</Link></li>
-                                    <li><Link to="/faq" className="dropdown-item dropdownList" >Frequently Asked Question</Link></li>
-                                </ul>
-                            </li>
+                                    <li><Link to="/apply-for-admission" className="nav-link text-light me-4" >Admission</Link></li>
+                                
                             <li className="nav-item dropdown">
                                 <p className="nav-link text-light me-4 dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Academics
@@ -33,10 +25,14 @@ function Navbar() {
                                 <ul className="dropdown-menu mt-2 dropdownKey" aria-labelledby="navbarDropdown">
                                     <li><Link to="/school-structure" className="dropdown-item dropdownList" >Structure of the School</Link></li>
                                     <li><Link to="/school-curriculum" className="dropdown-item dropdownList" >Curriculum</Link></li>
+                                    <li><Link to="/school-anthem" className="dropdown-item dropdownList" >School Anthems</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
                                 <Link to="/award-distinction" className="nav-link active text-light me-4" aria-current="page" >Awards & Distiction</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/gallery" className="nav-link active text-light me-4" aria-current="page" >Gallery</Link>
                             </li>
                         </ul>
                     </div>

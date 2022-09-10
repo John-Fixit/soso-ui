@@ -1,6 +1,22 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 function OurAdmission() {
+    const admissionURI = 'https://oysoso.herokuapp.com/admissionReq'
+    const [admissionDetails, setadmissionDetails] = useState([])
+    const [isLoading, setisLoading] = useState(false)
+    useEffect(()=>{
+        axios.get(admissionURI).then((res) => {
+            if(res.data.status){
+                setisLoading(res.data.status)
+                setadmissionDetails(()=>{return res.data.result})
+            }
+            else{
+                setisLoading(res.data.status)
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }, [])
     return (
         <>
             <div className='col-12 cont_fluid'>
@@ -13,31 +29,50 @@ function OurAdmission() {
                 <h2 className='text-center card-header border-0'>Admission into Senior Secondary School One(SSS 1)</h2>
                 <div className='col-12 all_equal'>
                     <p><b>NOTICE:</b> Please, read carefully all the instructions documented in this page for your admission processing.</p>
-                    <div className='px-3'>
-                        <p className='fw-bolder text-muted'>ELIGIBILITY</p>
-                        <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam impedit ducimus dignissimos. Expedita deserunt suscipit, quaerat vitae voluptatibus sapiente tempora totam at deleniti dolores doloremque animi harum. Eius, alias.</p>
+                    {
+                        isLoading?
+                    <div >
+                        {
+                            admissionDetails.map((admission, index)=>{
+                                return (
+                                    <div key={index}>
+                                        <div className='px-3'>
+                                            <p className='fw-bolder text-muted'>ELIGIBILITY</p>
+                                            <p className=''>{admission.admissionEli}</p>
+                                        </div>
+                                        <div className='px-3'>
+                                            <p className='fw-bolder text-muted'>REQUIREMENT FOR THE ADMISSION</p>
+                                            <p className=''>{admission.admissionReq}</p>
+                                        </div>
+                                        <div className='px-3'>
+                                            <p className='fw-bolder text-muted'>ADMISSION BEGINS</p>
+                                            <p className=''>Admission begins when : {admission.admissionBegins}</p>
+                                        </div>
+                                        <div className='px-3'>
+                                            <p className='fw-bolder text-muted'>ADMISSION CLOSES</p>
+                                            <p className=''>Admission Closes when : {admission.admissionCloses}</p>
+                                        </div>
+                                        <div className='px-3'>
+                                            <p className='fw-bolder text-muted'>PAYMENT INFORMATION</p>
+                                            <p className=''>{admission.admissionPaymentInfo}</p>
+                                            <p className='text-muted'><i>Please follow the analization above for your payments!</i></p>
+                                        </div>
+                                        <div className='px-3'>
+                                            <p className='fw-bolder text-muted'>REGISTRATION STEPS FOR THE ADMISSION</p>
+                                            <p className=''>{admission.admissionReg}</p>
+                                        </div>
+                        </div>
+                                    )
+                            })
+                        }
+                        
+                    </div>: 
+                    <div className='text-center'>
+                    <div class="spinner-border border-1 textColor mx-auto" role="status">
+                      <span class="visually-hidden">Loading...</span>
                     </div>
-                    <div className='px-3'>
-                        <p className='fw-bolder text-muted'>REQUIREMENT FOR THE ADMISSION</p>
-                        <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam impedit ducimus dignissimos. Expedita deserunt suscipit, quaerat vitae voluptatibus sapiente tempora totam at deleniti dolores doloremque animi harum. Eius, alias.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam impedit ducimus dignissimos. Expedita deserunt suscipit, quaerat vitae voluptatibus sapiente tempora totam at deleniti dolores doloremque animi harum. Eius, alias.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam impedit ducimus dignissimos. Expedita deserunt suscipit, quaerat vitae voluptatibus sapiente tempora totam at deleniti dolores doloremque animi harum. Eius, alias.</p>
                     </div>
-                    <div className='px-3'>
-                        <p className='fw-bolder text-muted'>ADMISSION BEGINS</p>
-                        <p className=''>Admission begins when : (Date)</p>
-                    </div>
-                    <div className='px-3'>
-                        <p className='fw-bolder text-muted'>ADMISSION CLOSES</p>
-                        <p className=''>Admission Closes when : (Date)</p>
-                    </div>
-                    <div className='px-3'>
-                        <p className='fw-bolder text-muted'>PAYMENT INFORMATION</p>
-                        <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam impedit ducimus dignissimos. Expedita deserunt suscipit, quaerat vitae voluptatibus sapiente tempora totam at deleniti dolores doloremque animi harum. Eius, alias.</p>
-                        <p className='text-muted'><i>Please follow the analization above for your payments!</i></p>
-                    </div>
-                    <div className='px-3'>
-                        <p className='fw-bolder text-muted'>REGISTRATION STEPS FOR THE ADMISSION</p>
-                        <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam impedit ducimus dignissimos. Expedita deserunt suscipit, quaerat vitae voluptatibus sapiente tempora totam at deleniti dolores doloremque animi harum. Eius, alias.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam impedit ducimus dignissimos. Expedita deserunt suscipit, quaerat vitae voluptatibus sapiente tempora totam at deleniti dolores doloremque animi harum. Eius, alias.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam totam impedit ducimus dignissimos. Expedita deserunt suscipit, quaerat vitae voluptatibus sapiente tempora totam at deleniti dolores doloremque animi harum. Eius, alias.</p>
-                    </div>
+}
                 </div>
             </div>
         </>

@@ -7,7 +7,9 @@ import OurAdmission from './Components/OurAdmission'
 import SchoolStructure from './Components/SchoolStructure'
 import Curriculum from './Components/Curriculum'
 import SchoolAward from './Components/SchoolAward'
-import FAQ from './Components/FAQ'
+import SchoolAnthem from './Components/SchoolAnthem'
+import MessageAdmin from './Pages/MessageAdmin'
+import Gallery from './Components/Gallery'
 function App() {
   return (
       <>
@@ -18,9 +20,11 @@ function App() {
             <Route path='/school-structure' element={<SchoolStructure/>} />
             <Route path='/school-curriculum' element={<Curriculum />} />
             <Route path='/award-distinction' element={<SchoolAward />} />
-            <Route path='/faq' element={<FAQ />} />
+            <Route path='/school-anthem' element={<SchoolAnthem />} />
+            <Route path='/gallery' element={<Gallery />} />
           </Routes>
           <SOSO />
+          <MessageAdmin />
       </>
   )
 }

@@ -8,8 +8,9 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const {json} = require('express')
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(json())
+const cloudinary = require('cloudinary')
+app.use(bodyParser.urlencoded({extended: true, limit: '100mb'}))
+app.use(json({limit: '100mb'}))
 app.use(cors())
 mongoose.connect(URI, (err)=>{
     if(err){
