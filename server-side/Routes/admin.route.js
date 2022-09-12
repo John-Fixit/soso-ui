@@ -11,5 +11,7 @@ adminRouter.post('/admission', adminController.admissionFunc)
 adminRouter.post('/from-principal', adminController.principalNote)
 adminRouter.get('/to-principal', adminController.getprincipal)
 adminRouter.post('/gallery', adminController.galleryFunc)
-adminRouter.post('/getGallery', adminController.getGallery)
+adminRouter.get('/getGallery', adminController.getGallery)
+adminRouter.post('/login', adminController.adminLogin)
+adminRouter.get('/adminHome', adminController.adminHome)
 module.exports = adminRouter

@@ -139,8 +139,8 @@ function EditPrincipal() {
           </div>
         </div>))
         : 
-        <div class="spinner-border textColor" role="status">
-        <span class="visually-hidden">Loading...</span>
+        <div className="spinner-border textColor" role="status">
+        <span className="visually-hidden">Loading...</span>
       </div>
 }
       </div>

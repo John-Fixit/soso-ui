@@ -18,7 +18,7 @@ const [principalInfo, setprincipalInfo] = useState([])
                             principalInfo.length ==1 ?
                             principalInfo.map((principal, index)=>(
                         <div className='row' key={index}>
-                            <div className='col-lg-4' data-aos="fade-up-right" data-duration="1000">
+                            <div className='col-lg-4 text-center' data-aos="fade-up-right" data-duration="1000">
                                 <img src={ principal.principalImage!= '' ? principal.principalImage :image} className="w-100 principal_image" />
 
                                 <h5 className='textColor text-center'>{principal.principalName} (Principal) </h5>

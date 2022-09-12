@@ -3,9 +3,12 @@ const {
   admissionModel,
   principalModel,
   galleryModel,
+  adminModel,
 } = require("../Model/admin.model");
+const jwt = require('jsonwebtoken')
 const cloudinary = require("cloudinary");
 require("dotenv").config();
+const SECRET = process.env.JWT_SECRET
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.API_KEY,
@@ -155,7 +158,6 @@ const galleryFunc = (req, res) => {
         status: false,
       });
     } else {
-      // const
       const newGallery = new galleryModel({
         title: req.body.galleryTitle,
         file: resultURL.secure_url,
@@ -191,6 +193,45 @@ const getGallery=(req, res)=>{
       }
     })
 }
+const adminLogin =(req, res)=>{
+  const username = req.body.username
+  const password = req.body.password;
+  adminModel.findOne({'username': username}, (err, user)=>{
+    if(err){
+      res.send({
+        message: `Internal server error`,
+        status: false
+      })
+    }else{
+      if(!user){
+        res.send({message: `This USERNAME is not registered/ not correct`, status: false})
+      }else{
+        user.validatePassword(password, (err, same)=>{
+          if(err){
+            res.json({message: `Internal server error, please check you connection`, status: false})
+          }else{
+            if(same){
+                const token = jwt.sign({username}, SECRET, {expiresIn: 10})
+                res.json({token, status: true})
+            }else{
+              res.json({message: `Password enterer is incorrect, please check an try again!`, status: false})
+            }
+          }
+        })
+      }
+    }
+  })
+}
+const adminHome=(req, res)=>{
+    const token = req.headers.authorization.split(' ')[1]
+    jwt.verify(token, SECRET, (err, result)=>{
+      if(err){
+        res.send({message: `Internal server error!`, status: false})
+      }else{
+          res.send({message: `User authorized`, status: true})
+      }
+    })
+}
 
 module.exports = {
   test,
@@ -203,5 +244,7 @@ module.exports = {
   principalNote,
   getprincipal,
   galleryFunc,
-  getGallery
+  getGallery,
+  adminLogin,
+  adminHome
 };

@@ -132,7 +132,31 @@ span {
   height: 35vh !important;
   overflow-y: auto;
 }
+.paginateBtn{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 40px;
+  list-style: none;
+}
+.paginateBtn a{
+  border: 1px solid brown;
+  margin: 2vh;
+  padding: 7px;
+  border-radius: 5px;
+  color: brown !important;
+  box-shadow: inset 6px 6px 6px -2px rgb(196, 176, 176);
+  text-decoration: none;
 
+}
+.paginateBtn a:hover{
+  color: white !important;
+  background: brown;
+}
+.paginateActive a{
+  color: white !important;
+  background: brown;
+}
 @media screen and (max-width: 1000px) and (min-width: 120px) {
   .program-img {
     display: none !important;
@@ -160,5 +184,11 @@ span {
 
   .program-img {
     display: none !important;
+  }
+}
+@media screen and (max-width: 990px) and (min-width: 320px) {
+  .principal_image{
+    width: 60vh !important;
+    height: 70vh !important;
   }
 }

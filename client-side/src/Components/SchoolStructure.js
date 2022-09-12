@@ -15,7 +15,7 @@ function SchoolStructure() {
                     data-aos-duration="3000">Structure of the School</p>
                 <div className='col-9 mx-auto text-muted gy-5'>
                     <p className='text-muted'>Students at SOSO are expected to offer all subjects in SS1 and SS2. However, the number of subjects in the final SS3 is reduced to a minimum of 8 and maximum of 9.</p>
-                    <p data-aos="zoom-in">Traditionally, students in the Senior Secondary classes should offer subjects based on their Interested courses requirement. But the current curriculum, as designed by the Nigerian Educational Research and Development Council (NERDC), requires all students in  the Senior Secondary classes to offer five compulsory subjects, and as a science students your department subjects will then be included”.</p>
+                    <p data-aos="zoom-in">Traditionally, students in the Senior Secondary classes, Science department will offer science subjects such as Chemistry, Biology, Physics Et.c. As requires all students in  the Science school were to offer the general compulsory subjects, and then includes the science courses”.</p>
                     <p data-aos="zoom-in">They includes the following:</p>
                     <ul data-aos= "zoom-in">
                         <li>Mathematics</li>
