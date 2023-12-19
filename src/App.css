@@ -1,0 +1,210 @@
+
+.scrollDiv{
+  overflow-y: auto;
+  height: 50vh;
+}
+*::-webkit-scrollbar{
+  width: 5px !important;
+}
+*::-webkit-scrollbar-thumb{
+  background: rgb(219, 102, 102);
+  border-radius: 5vh;
+  
+}
+.scrollDiv::-webkit-scrollbar-track{
+  background: white;
+  box-shadow: inset 0 0 5px brown;
+  border-radius: 5vh;
+}
+
+.noOverflow {
+  overflow: hidden !important;
+}
+
+.cont_fluid {
+  margin-top: 11.5vh;
+
+}
+
+.footer-div {
+  margin-bottom: 10vh !important;
+}
+
+.navbar-light {
+  background-color: brown !important;
+}
+
+.schoolLogo {
+  width: 15vh !important;
+  height: 10vh;
+}
+
+.textColor {
+  color: brown !important;
+}
+
+.dropdownKey {
+  border: 2px solid brown !important;
+}
+
+.dropdownList:hover {
+  background-color: brown !important;
+  color: white !important;
+}
+.schoolBgs{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100% !important;
+  height: 80vh;
+}
+
+.bg-imgs {
+  background-image: url(./Images/soso\ logo.png);
+  background-size: contain !important;
+}
+.sosoBg1{
+  background-image: url(./Images/sosoWithCheck.jpg);
+}
+.sosoBg2{
+  background-image: url(./Images/IMG-20220731-WA0007.jpg);
+}
+.sosoBg3{
+  background-image: url(./Images/IMG-20220731-WA0010.jpg);
+}
+.sosoBg4{
+  background-image: url(./Images/soso.jfif);
+}
+
+
+.admission-img {
+  background-image: linear-gradient(to left, rgb(48, 44, 44, 0.80), rgb(116, 67, 60, 0.53), rgb(58, 3, 3, 0.64)), url(./Images/IMG-20220731-WA0010.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+}
+
+.payment-img {
+  background-image: linear-gradient(to left, rgb(48, 44, 44, 0.80), rgb(116, 67, 60, 0.53), rgb(58, 3, 3, 0.64)), url(./Images/IMG-20220731-WA0010.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+}
+
+.bg-img2 {
+  background-image: linear-gradient(to left, rgb(48, 44, 44, 0.80), rgb(116, 67, 60, 0.53), rgb(58, 3, 3, 0.64)), url(./Images/IMG-20220731-WA0007.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+  width: 100% !important;
+}
+
+.bg-img3 {
+  background-image: linear-gradient(to left, rgb(48, 44, 44, 0.80), rgb(116, 67, 60, 0.53)), url(./Images/IMG-20220731-WA0007.jpg);
+  margin-top: 5vh;
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.all_equal {
+  padding: 0vh 6vh !important;
+}
+.school_alias {
+  color: brown;
+  font-size: 5vh;
+  text-align: center;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.carousel-card {
+  border-radius: 5vh !important;
+  padding: 3vh;
+}
+
+.p,
+h1,
+div,
+h2,
+h3,
+h4,
+span {
+  font-family: sans-serif !important;
+}
+.principal_image{
+  border-radius: 3vh !important;
+}
+.testimony_note{
+  height: 35vh !important;
+  overflow-y: auto;
+}
+.paginateBtn{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 40px;
+  list-style: none;
+}
+.paginateBtn a{
+  border: 1px solid brown;
+  margin: 2vh;
+  padding: 7px;
+  border-radius: 5px;
+  color: brown !important;
+  box-shadow: inset 6px 6px 6px -2px rgb(196, 176, 176);
+  text-decoration: none;
+
+}
+.paginateBtn a:hover{
+  color: white !important;
+  background: brown;
+}
+.paginateActive a{
+  color: white !important;
+  background: brown;
+}
+@media screen and (max-width: 1000px) and (min-width: 120px) {
+  .program-img {
+    display: none !important;
+  }
+
+  .program-note {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 890px) and (min-width: 120px) {
+
+  .bg-imgs,
+  .admission-img {
+    height: 40vh;
+  }
+
+  .school_alias {
+    font-size: 5vh;
+  }
+
+  .all_equal {
+    padding: 0vh 1vh !important;
+  }
+
+  .program-img {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 990px) and (min-width: 320px) {
+  .principal_image{
+    width: 60vh !important;
+    height: 70vh !important;
+  }
+}
+.active{
+  border-radius: 1vh;
+  background-color: white !important;
+  color: brown !important;
+}
